@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/model/list_image.dart';
+
+import 'widget/list_images.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +25,19 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+
+List<ModelImage> _imageItem = [
+  ModelImage(
+      'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+  ModelImage(
+      'https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+  ModelImage(
+      'https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+  ModelImage(
+      'https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+  ModelImage(
+      'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+];
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -52,17 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (contex, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Expanded(
-                        child: Container(
-                      width: 300,
-                      height: 500,
-                      color: Colors.amber,
-                    )),
+                  return ListImage(
+                    image: _imageItem[index].imageItem,
                   );
                 },
-                itemCount: 5,
+                itemCount: _imageItem.length,
               )),
         ],
       ),
