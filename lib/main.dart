@@ -66,39 +66,40 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Expanded(
             child: Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (contex, index) {
-                          return ListImage(
-                            image: _imageItem[index].imageItem,
-                          );
-                        },
-                        itemCount: _imageItem.length,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.12,
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(child: CategoryItem()),
-                          Expanded(child: CategoryItem()),
-                          Expanded(child: CategoryItem()),
-                          Expanded(child: CategoryItem()),
-                        ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (contex, index) {
+                            return ListImage(
+                              image: _imageItem[index].imageItem,
+                            );
+                          },
+                          itemCount: _imageItem.length,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.12,
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(child: CategoryItem()),
+                            Expanded(child: CategoryItem()),
+                            Expanded(child: CategoryItem()),
+                            Expanded(child: CategoryItem()),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: Container(
+                    Container(
+                      height: 1555,
                       color: Colors.amber,
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -107,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const EdgeInsets.only(top: 8, bottom: 8, right: 30, left: 30),
             child: Container(
               color: Colors.transparent,
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: MediaQuery.of(context).size.height * 0.08,
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -139,8 +140,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 child: Stack(
                                   alignment: Alignment.topRight,
                                   children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(15),
+                                    Container(
+                                      padding:
+                                          EdgeInsets.only(right: 20, top: 8),
                                       child: Text('Cart',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
@@ -151,9 +153,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                       width: 20,
                                       child: FittedBox(
                                           child: Center(
-                                        child: Text(
-                                          '2',
-                                          // style: TextStyle(fontSize: 5),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(1.0),
+                                          child: Text(
+                                            '2',
+                                            style: TextStyle(
+                                                fontSize: 5,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       )),
                                       decoration: BoxDecoration(
