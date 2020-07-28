@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/list_image.dart';
+import 'package:food_app/widget/row_category_item.dart';
 
 import 'widget/list_images.dart';
 
@@ -74,6 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 itemCount: _imageItem.length,
               )),
+          Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.1,
+              child: Row(
+                children: <Widget>[
+                  Expanded(child: CategoryItem()),
+                  Expanded(child: CategoryItem()),
+                  Expanded(child: CategoryItem()),
+                  Expanded(child: CategoryItem()),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
