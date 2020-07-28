@@ -46,7 +46,25 @@ class _MyHomePageState extends State<MyHomePage> {
         iconTheme: IconThemeData(color: Colors.grey),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          Container(
+              height: MediaQuery.of(context).size.height * 0.23,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (contex, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Expanded(
+                        child: Container(
+                      width: 300,
+                      height: 500,
+                      color: Colors.amber,
+                    )),
+                  );
+                },
+                itemCount: 5,
+              )),
+        ],
       ),
     );
   }
