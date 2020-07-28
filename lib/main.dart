@@ -64,31 +64,134 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-              height: MediaQuery.of(context).size.height * 0.23,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (contex, index) {
-                  return ListImage(
-                    image: _imageItem[index].imageItem,
-                  );
-                },
-                itemCount: _imageItem.length,
-              )),
-          Padding(
-            padding: const EdgeInsets.all(3.0),
+          Expanded(
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.1,
-              child: Row(
+              child: Column(
                 children: <Widget>[
-                  Expanded(child: CategoryItem()),
-                  Expanded(child: CategoryItem()),
-                  Expanded(child: CategoryItem()),
-                  Expanded(child: CategoryItem()),
+                  Container(
+                      height: MediaQuery.of(context).size.height * 0.20,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (contex, index) {
+                          return ListImage(
+                            image: _imageItem[index].imageItem,
+                          );
+                        },
+                        itemCount: _imageItem.length,
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.12,
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(child: CategoryItem()),
+                          Expanded(child: CategoryItem()),
+                          Expanded(child: CategoryItem()),
+                          Expanded(child: CategoryItem()),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      color: Colors.amber,
+                    ),
+                  )
                 ],
               ),
             ),
           ),
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 8, bottom: 8, right: 30, left: 30),
+            child: Container(
+              color: Colors.transparent,
+              height: MediaQuery.of(context).size.height * 0.1,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.8),
+                      offset: Offset(-6.0, -6.0),
+                      blurRadius: 16.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      offset: Offset(6.0, 6.0),
+                      blurRadius: 16.0,
+                    ),
+                  ],
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Container(
+                              child: Center(
+                                child: Stack(
+                                  alignment: Alignment.topRight,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(15),
+                                      child: Text('Cart',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 25)),
+                                    ),
+                                    Container(
+                                      height: 20,
+                                      width: 20,
+                                      child: FittedBox(
+                                          child: Center(
+                                        child: Text(
+                                          '2',
+                                          // style: TextStyle(fontSize: 5),
+                                        ),
+                                      )),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: double.infinity,
+                        color: Colors.white,
+                        width: 2,
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            child: Center(
+                              child: Text('Pay \$225',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
