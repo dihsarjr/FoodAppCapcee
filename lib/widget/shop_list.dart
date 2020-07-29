@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ShopItem extends StatelessWidget {
+  String image;
+  String title;
+  ShopItem({this.image, this.title});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,24 +30,26 @@ class ShopItem extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 25),
+                  padding: const EdgeInsets.only(
+                      left: 15, right: 25, top: 10, bottom: 10),
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.20,
                     child: Image.network(
-                      'https://d13csqd2kn0ewr.cloudfront.net/uploads/topic_tag_sponsor/logo/83/subway_logo_content.png',
+                      image,
                       fit: BoxFit.contain,
                     ),
                   ),
                 ),
                 Expanded(
                   child: Container(
+                    padding: EdgeInsets.only(top: 6, bottom: 6),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         FittedBox(
                           child: Text(
-                            'Subway Restaurant',
+                            title,
                             style: TextStyle(fontSize: 20),
                           ),
                         ),

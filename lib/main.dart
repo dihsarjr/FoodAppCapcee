@@ -70,6 +70,38 @@ List<Suggested> _images = [
       image:
           'https://i.pinimg.com/originals/0b/6a/53/0b6a5364c1831a2ceb273110c6a11c35.png'),
 ];
+List<Suggested> _shop = [
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Subway Restaurant',
+      image:
+          'https://d13csqd2kn0ewr.cloudfront.net/uploads/topic_tag_sponsor/logo/83/subway_logo_content.png'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'KFC',
+      image:
+          'https://i1.wp.com/freepngimages.com/wp-content/uploads/2017/07/KFC-logo.png?fit=895%2C895'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Starbucks',
+      image:
+          'https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Big Bazaar',
+      image:
+          'https://www.iprospect.com/~/media/Local/India/Our%20work/Casestudy/Big%20Bazaar/big-bazaar-logo.png?h=360&la=en&w=360'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Apollo',
+      image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
+];
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -118,10 +150,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Row(
                           children: <Widget>[
                             Expanded(
-                                child: CategoryItem(
-                              title: 'Food',
-                              image:
-                                  'https://cdn3.iconfinder.com/data/icons/food-1-11/128/food_1-16-512.png',
+                                child: GestureDetector(
+                              onTap: () {
+                                print('gfhfhdghf');
+                              },
+                              child: CategoryItem(
+                                title: 'Food',
+                                image:
+                                    'https://cdn3.iconfinder.com/data/icons/food-1-11/128/food_1-16-512.png',
+                              ),
                             )),
                             Expanded(
                                 child: CategoryItem(
@@ -260,7 +297,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return ShopItem();
+                            return ShopItem(
+                              image: _shop[index].image,
+                              title: _shop[index].title,
+                            );
                           },
                           itemCount: 5,
                         ),
