@@ -37,8 +37,7 @@ class SuggestedItem extends StatelessWidget {
                   child: FittedBox(
                     child: Text(
                       title,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(fontSize: 20),
                     ),
                   ),
                 ),

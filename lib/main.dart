@@ -5,6 +5,7 @@ import 'package:food_app/widget/row_category_item.dart';
 
 import 'model/sugessted_model.dart';
 import 'widget/list_images.dart';
+import 'widget/shop_list.dart';
 import 'widget/suggested_grid_item.dart';
 
 void main() {
@@ -254,10 +255,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
                       child: Container(
-                        height: 500,
                         color: Colors.white,
-                        child:
-                            ListView.builder(itemBuilder: (context, index) {}),
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return ShopItem();
+                          },
+                          itemCount: 5,
+                        ),
                       ),
                     )
                   ],
