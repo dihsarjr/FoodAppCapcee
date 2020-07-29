@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:food_app/food_screen.dart';
 import 'package:food_app/model/list_image.dart';
 import 'package:food_app/widget/offer_list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
@@ -15,6 +17,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -101,6 +105,36 @@ List<Suggested> _shop = [
       title: 'Apollo',
       image:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Subway Restaurant',
+      image:
+          'https://d13csqd2kn0ewr.cloudfront.net/uploads/topic_tag_sponsor/logo/83/subway_logo_content.png'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'KFC',
+      image:
+          'https://i1.wp.com/freepngimages.com/wp-content/uploads/2017/07/KFC-logo.png?fit=895%2C895'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Starbucks',
+      image:
+          'https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Big Bazaar',
+      image:
+          'https://www.iprospect.com/~/media/Local/India/Our%20work/Casestudy/Big%20Bazaar/big-bazaar-logo.png?h=360&la=en&w=360'),
+  Suggested(
+      brand: 'American, Healthy food ',
+      price: '117',
+      title: 'Apollo',
+      image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
 ];
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -152,7 +186,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             Expanded(
                                 child: GestureDetector(
                               onTap: () {
-                                print('gfhfhdghf');
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FoodScreen(),
+                                    ));
                               },
                               child: CategoryItem(
                                 title: 'Food',
@@ -161,22 +199,49 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             )),
                             Expanded(
-                                child: CategoryItem(
-                              title: 'Medicine',
-                              image:
-                                  'https://cdn1.iconfinder.com/data/icons/line-filled-icons-part-2/64/_Add_Medication-512.png',
+                                child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FoodScreen(),
+                                    ));
+                              },
+                              child: CategoryItem(
+                                title: 'Medicine',
+                                image:
+                                    'https://cdn1.iconfinder.com/data/icons/line-filled-icons-part-2/64/_Add_Medication-512.png',
+                              ),
                             )),
                             Expanded(
-                                child: CategoryItem(
-                              title: 'Flowers',
-                              image:
-                                  'https://cdn4.iconfinder.com/data/icons/Gifts/512/bouquet.png',
+                                child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FoodScreen(),
+                                    ));
+                              },
+                              child: CategoryItem(
+                                title: 'Flowers',
+                                image:
+                                    'https://cdn4.iconfinder.com/data/icons/Gifts/512/bouquet.png',
+                              ),
                             )),
                             Expanded(
-                                child: CategoryItem(
-                              title: 'Grocery',
-                              image:
-                                  'https://image.flaticon.com/icons/png/512/135/135763.png',
+                                child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FoodScreen(),
+                                    ));
+                              },
+                              child: CategoryItem(
+                                title: 'Grocery',
+                                image:
+                                    'https://image.flaticon.com/icons/png/512/135/135763.png',
+                              ),
                             )),
                           ],
                         ),
@@ -302,7 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               title: _shop[index].title,
                             );
                           },
-                          itemCount: 5,
+                          itemCount: _shop.length,
                         ),
                       ),
                     )
