@@ -3,6 +3,7 @@ import 'package:food_app/model/list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
 
 import 'widget/list_images.dart';
+import 'widget/suggested_grid_item.dart';
 
 void main() {
   runApp(MyApp());
@@ -149,29 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 childAspectRatio: (1 / 1),
                               ),
                               itemBuilder: (context, index) {
-                                return Stack(
-                                  alignment: Alignment.bottomRight,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Container(
-                                          decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        border:
-                                            Border.all(color: Colors.black12),
-                                        borderRadius: BorderRadius.circular(15),
-                                      )),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 40),
-                                      child: Icon(
-                                        Icons.add_circle,
-                                        color: Colors.amber,
-                                      ),
-                                    )
-                                  ],
-                                );
+                                return SuggestedItem();
                               },
                               itemCount: 4,
                             ),
