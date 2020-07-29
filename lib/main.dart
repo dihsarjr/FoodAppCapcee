@@ -5,6 +5,9 @@ import 'package:food_app/model/list_image.dart';
 import 'package:food_app/widget/offer_list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
 
+import 'flowers.dart';
+import 'grocery.dart';
+import 'medicine.dart';
 import 'model/sugessted_model.dart';
 import 'widget/list_images.dart';
 import 'widget/shop_list.dart';
@@ -204,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => FoodScreen(),
+                                      builder: (context) => Medicine(),
                                     ));
                               },
                               child: CategoryItem(
@@ -219,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => FoodScreen(),
+                                      builder: (context) => Flowers(),
                                     ));
                               },
                               child: CategoryItem(
@@ -234,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => FoodScreen(),
+                                      builder: (context) => Grocery(),
                                     ));
                               },
                               child: CategoryItem(
