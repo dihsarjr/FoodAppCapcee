@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
+  String image;
+  String title;
+  CategoryItem({this.image, this.title});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,13 +15,15 @@ class CategoryItem extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Container(
-                  child: Image.network(
-                      'https://cdn3.iconfinder.com/data/icons/food-1-11/128/food_1-16-512.png'),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.network(image),
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5.0),
-                child: Text('Food'),
+                child: Text(title),
               )
             ],
           ),

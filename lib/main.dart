@@ -86,17 +86,98 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: MediaQuery.of(context).size.height * 0.12,
                         child: Row(
                           children: <Widget>[
-                            Expanded(child: CategoryItem()),
-                            Expanded(child: CategoryItem()),
-                            Expanded(child: CategoryItem()),
-                            Expanded(child: CategoryItem()),
+                            Expanded(
+                                child: CategoryItem(
+                              title: 'Food',
+                              image:
+                                  'https://cdn3.iconfinder.com/data/icons/food-1-11/128/food_1-16-512.png',
+                            )),
+                            Expanded(
+                                child: CategoryItem(
+                              title: 'Medicine',
+                              image:
+                                  'https://cdn1.iconfinder.com/data/icons/line-filled-icons-part-2/64/_Add_Medication-512.png',
+                            )),
+                            Expanded(
+                                child: CategoryItem(
+                              title: 'Flowers',
+                              image:
+                                  'https://cdn4.iconfinder.com/data/icons/Gifts/512/bouquet.png',
+                            )),
+                            Expanded(
+                                child: CategoryItem(
+                              title: 'Grocery',
+                              image:
+                                  'https://image.flaticon.com/icons/png/512/135/135763.png',
+                            )),
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      height: 1555,
-                      color: Colors.amber,
+                      color: Colors.white,
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Suggested',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                ),
+                              ),
+                              FlatButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'View More >',
+                                    style: TextStyle(color: Colors.black38),
+                                  ))
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GridView.builder(
+                              physics: ClampingScrollPhysics(),
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                childAspectRatio: (1 / 1),
+                              ),
+                              itemBuilder: (context, index) {
+                                return Stack(
+                                  alignment: Alignment.bottomRight,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                          decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        border:
+                                            Border.all(color: Colors.black12),
+                                        borderRadius: BorderRadius.circular(15),
+                                      )),
+                                    ),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 40),
+                                      child: Icon(
+                                        Icons.add_circle,
+                                        color: Colors.amber,
+                                      ),
+                                    )
+                                  ],
+                                );
+                              },
+                              itemCount: 4,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -108,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const EdgeInsets.only(top: 8, bottom: 8, right: 30, left: 30),
             child: Container(
               color: Colors.transparent,
-              height: MediaQuery.of(context).size.height * 0.08,
+              height: 70,
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -146,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       child: Text('Cart',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 25)),
+                                              fontSize: 20)),
                                     ),
                                     Container(
                                       height: 20,
@@ -188,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text('Pay \$225',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 25)),
+                                      fontSize: 20)),
                             ),
                           ),
                         ),
