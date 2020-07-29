@@ -72,13 +72,15 @@ class SuggestedItem extends StatelessWidget {
                             children: <Widget>[
                               Icon(
                                 Icons.favorite_border,
-                                size: 12,
+                                size: 10,
                                 color: Colors.black54,
                               ),
-                              Text(
-                                '4.0',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black54),
+                              FittedBox(
+                                child: Text(
+                                  '4.0',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.black54),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -88,23 +90,27 @@ class SuggestedItem extends StatelessWidget {
                                   color: Colors.black54,
                                 ),
                               ),
-                              Text(
-                                '15 Min',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black54),
+                              FittedBox(
+                                child: Text(
+                                  '15 Min',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.black54),
+                                ),
                               ),
                             ],
                           ),
                         )
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 15, bottom: 10),
-                      child: FittedBox(
-                        child: Text(
-                          '\$$price',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15, bottom: 10),
+                        child: FittedBox(
+                          child: Text(
+                            '\$$price',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
                         ),
                       ),
                     ),

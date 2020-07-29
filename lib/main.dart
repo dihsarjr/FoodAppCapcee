@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/model/list_image.dart';
+import 'package:food_app/widget/offer_list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
 
 import 'model/sugessted_model.dart';
@@ -112,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Padding(
                       padding: const EdgeInsets.all(3.0),
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.12,
+                        height: 100,
                         child: Row(
                           children: <Widget>[
                             Expanded(
@@ -153,18 +154,22 @@ class _MyHomePageState extends State<MyHomePage> {
                               Padding(
                                 padding: const EdgeInsets.only(
                                     top: 8, bottom: 8, right: 18, left: 18),
-                                child: Text(
-                                  'Suggested',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                child: FittedBox(
+                                  child: Text(
+                                    'Suggested',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
+                                  ),
                                 ),
                               ),
                               FlatButton(
                                   onPressed: () {},
-                                  child: Text(
-                                    'View More >',
-                                    style: TextStyle(color: Colors.black38),
+                                  child: FittedBox(
+                                    child: Text(
+                                      'View More >',
+                                      style: TextStyle(color: Colors.black38),
+                                    ),
                                   ))
                             ],
                           ),
@@ -192,6 +197,69 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 10,
+                        bottom: 5,
+                      ),
+                      child: Container(
+                        color: Colors.white,
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Flexible(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 8, bottom: 8, right: 18, left: 18),
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Try out exciting offers',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                FlatButton(
+                                    onPressed: () {},
+                                    child: FittedBox(
+                                      child: Text(
+                                        'View More >',
+                                        style: TextStyle(color: Colors.black38),
+                                      ),
+                                    )),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                  height: 100,
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (contex, index) {
+                                      return OfferListImage(
+                                        image: _imageItem[index].imageItem,
+                                      );
+                                    },
+                                    itemCount: _imageItem.length,
+                                  )),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Container(
+                        height: 500,
+                        color: Colors.white,
+                        child:
+                            ListView.builder(itemBuilder: (context, index) {}),
+                      ),
+                    )
                   ],
                 ),
               ),
