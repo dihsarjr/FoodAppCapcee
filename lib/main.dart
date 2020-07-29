@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app/model/list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
 
+import 'model/sugessted_model.dart';
 import 'widget/list_images.dart';
 import 'widget/suggested_grid_item.dart';
 
@@ -39,6 +40,14 @@ List<ModelImage> _imageItem = [
       'https://images.unsplash.com/photo-1496412705862-e0088f16f791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
   ModelImage(
       'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'),
+];
+
+List<Suggested> _images = [
+  Suggested(
+      brand: 'Subway. YSK',
+      price: '117',
+      title: 'Cheesy Delux Burger',
+      image: '')
 ];
 
 class _MyHomePageState extends State<MyHomePage> {
