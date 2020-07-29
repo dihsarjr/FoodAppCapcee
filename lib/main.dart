@@ -47,7 +47,26 @@ List<Suggested> _images = [
       brand: 'Subway. YSK',
       price: '117',
       title: 'Cheesy Delux Burger',
-      image: '')
+      image:
+          'https://purepng.com/public/uploads/medium/purepng.com-burgersandwhichfoodbreadcaviarburgerdelicious-21526117612ir9gw.png'),
+  Suggested(
+      brand: 'Subway. YSK',
+      price: '224',
+      title: 'Delight Veg Pizza',
+      image:
+          'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Pizza-PNG-Transparent-Image.png'),
+  Suggested(
+      brand: 'Starbucks. YSK',
+      price: '99',
+      title: 'Choco Latte',
+      image:
+          'https://www.starbucks.co.th/media/PeppermintMocha_tcm78-25963_w1024_n.png'),
+  Suggested(
+      brand: 'Flura. YSK',
+      price: '79',
+      title: 'White & Red Rose',
+      image:
+          'https://i.pinimg.com/originals/0b/6a/53/0b6a5364c1831a2ceb273110c6a11c35.png'),
 ];
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -132,7 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    top: 8, bottom: 8, right: 18, left: 18),
                                 child: Text(
                                   'Suggested',
                                   style: TextStyle(
@@ -156,12 +176,17 @@ class _MyHomePageState extends State<MyHomePage> {
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
-                                childAspectRatio: (1 / 1),
+                                childAspectRatio: (1 / 1.1),
                               ),
                               itemBuilder: (context, index) {
-                                return SuggestedItem();
+                                return SuggestedItem(
+                                  brand: _images[index].brand,
+                                  image: _images[index].image,
+                                  price: _images[index].price,
+                                  title: _images[index].title,
+                                );
                               },
-                              itemCount: 4,
+                              itemCount: _images.length,
                             ),
                           )
                         ],

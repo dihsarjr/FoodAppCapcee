@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SuggestedItem extends StatelessWidget {
+  String image;
+  String price;
+  String brand;
+  String title;
+
+  SuggestedItem({this.brand, this.image, this.price, this.title});
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,8 +26,8 @@ class SuggestedItem extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: Container(
-                      child: Image.network(
-                          'http://www.pngpix.com/wp-content/uploads/2016/08/PNGPIX-COM-Pizza-PNG-Transparent-Image.png'),
+                      padding: EdgeInsets.all(8),
+                      child: Image.network(image),
                     ),
                   ),
                 ),
@@ -30,7 +36,7 @@ class SuggestedItem extends StatelessWidget {
                       left: 10, right: 10, bottom: 5, top: 5),
                   child: FittedBox(
                     child: Text(
-                      'Cheesy Delux Burger',
+                      title,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
@@ -38,26 +44,65 @@ class SuggestedItem extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 10, right: 10, bottom: 5),
-                      child: FittedBox(
-                        child: Text(
-                          'Cheesy Delux Burger',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                              color: Colors.black54),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+                          ),
+                          child: FittedBox(
+                            child: Text(
+                              brand,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10,
+                                  color: Colors.black54),
+                            ),
+                          ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 10, bottom: 5),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.favorite_border,
+                                size: 12,
+                                color: Colors.black54,
+                              ),
+                              Text(
+                                '4.0',
+                                style: TextStyle(
+                                    fontSize: 12, color: Colors.black54),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width: 1,
+                                  height: 10,
+                                  color: Colors.black54,
+                                ),
+                              ),
+                              Text(
+                                '15 Min',
+                                style: TextStyle(
+                                    fontSize: 12, color: Colors.black54),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 10, right: 15, bottom: 5, top: 5),
+                      padding: const EdgeInsets.only(right: 15, bottom: 10),
                       child: FittedBox(
                         child: Text(
-                          '\$100',
+                          '\$$price',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
@@ -65,35 +110,6 @@ class SuggestedItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 10, right: 10, bottom: 5),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.favorite_border,
-                        size: 12,
-                        color: Colors.black54,
-                      ),
-                      Text(
-                        '4.0',
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 1,
-                          height: 10,
-                          color: Colors.black54,
-                        ),
-                      ),
-                      Text(
-                        '15 Min',
-                        style: TextStyle(fontSize: 12, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
