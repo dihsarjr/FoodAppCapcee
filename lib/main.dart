@@ -13,7 +13,7 @@ import 'widget/list_images.dart';
 import 'widget/shop_list.dart';
 import 'widget/suggested_grid_item.dart';
 
-void main() {
+Future<void> main() async {
   runApp(MyApp());
 }
 
@@ -384,7 +384,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const EdgeInsets.only(top: 8, bottom: 8, right: 30, left: 30),
             child: Container(
               color: Colors.transparent,
-              height: 70,
+              height: 65,
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -419,10 +419,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Container(
                                       padding:
                                           EdgeInsets.only(right: 20, top: 8),
-                                      child: Text('Cart',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20)),
+                                      child: FittedBox(
+                                        child: Text('Cart',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18)),
+                                      ),
                                     ),
                                     Container(
                                       height: 20,
@@ -461,10 +463,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           padding: const EdgeInsets.all(10.0),
                           child: Container(
                             child: Center(
-                              child: Text('Pay \$225',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20)),
+                              child: FittedBox(
+                                child: Text('Pay \$225',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18)),
+                              ),
                             ),
                           ),
                         ),
