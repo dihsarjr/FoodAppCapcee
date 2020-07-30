@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../whishlist.dart';
+
 class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,18 @@ class NavigationBar extends StatelessWidget {
           title: Text('Home'),
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.format_align_justify,
-            color: Colors.black,
+          icon: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Wishlist(),
+                  ));
+            },
+            child: Icon(
+              Icons.format_align_justify,
+              color: Colors.black,
+            ),
           ),
           title: Text('shopping'),
         ),
