@@ -9,6 +9,7 @@ import 'flowers.dart';
 import 'grocery.dart';
 import 'medicine.dart';
 import 'model/sugessted_model.dart';
+import 'shop_details.dart';
 import 'widget/list_images.dart';
 import 'widget/shop_list.dart';
 import 'widget/suggested_grid_item.dart';
@@ -207,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Medicine(),
+                                      builder: (context) => ShopDetails(),
                                     ));
                               },
                               child: CategoryItem(
