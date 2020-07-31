@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'model/sugessted_model.dart';
+import 'widget/shop_list.dart';
 import 'widget/suggested_grid_item.dart';
 
 class ShopDetails extends StatefulWidget {
@@ -34,6 +35,68 @@ class _ShopDetailsState extends State<ShopDetails> {
         title: 'White & Red Rose',
         image:
             'https://i.pinimg.com/originals/0b/6a/53/0b6a5364c1831a2ceb273110c6a11c35.png'),
+  ];
+  List<Suggested> _shop = [
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Subway Restaurant',
+        image:
+            'https://d13csqd2kn0ewr.cloudfront.net/uploads/topic_tag_sponsor/logo/83/subway_logo_content.png'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'KFC',
+        image:
+            'https://i1.wp.com/freepngimages.com/wp-content/uploads/2017/07/KFC-logo.png?fit=895%2C895'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Starbucks',
+        image:
+            'https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Big Bazaar',
+        image:
+            'https://www.iprospect.com/~/media/Local/India/Our%20work/Casestudy/Big%20Bazaar/big-bazaar-logo.png?h=360&la=en&w=360'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Apollo',
+        image:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Subway Restaurant',
+        image:
+            'https://d13csqd2kn0ewr.cloudfront.net/uploads/topic_tag_sponsor/logo/83/subway_logo_content.png'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'KFC',
+        image:
+            'https://i1.wp.com/freepngimages.com/wp-content/uploads/2017/07/KFC-logo.png?fit=895%2C895'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Starbucks',
+        image:
+            'https://upload.wikimedia.org/wikipedia/sco/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Big Bazaar',
+        image:
+            'https://www.iprospect.com/~/media/Local/India/Our%20work/Casestudy/Big%20Bazaar/big-bazaar-logo.png?h=360&la=en&w=360'),
+    Suggested(
+        brand: 'American, Healthy food ',
+        price: '117',
+        title: 'Apollo',
+        image:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
   ];
 
   bool icons = false;
@@ -207,6 +270,7 @@ class _ShopDetailsState extends State<ShopDetails> {
                 ),
               ),
               Container(
+                color: Colors.white,
                 padding: const EdgeInsets.only(
                     left: 25, right: 25, top: 30, bottom: 10),
                 child: Column(
@@ -238,6 +302,23 @@ class _ShopDetailsState extends State<ShopDetails> {
                             })
                       ],
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Container(
+                        color: Colors.white,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return ShopItem(
+                              image: _shop[index].image,
+                              title: _shop[index].title,
+                            );
+                          },
+                          itemCount: _shop.length,
+                        ),
+                      ),
+                    )
                   ],
                 ),
               )
