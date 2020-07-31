@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'model/sugessted_model.dart';
 import 'widget/suggested_grid_item.dart';
 
-class ShopDetails extends StatelessWidget {
+class ShopDetails extends StatefulWidget {
+  @override
+  _ShopDetailsState createState() => _ShopDetailsState();
+}
+
+class _ShopDetailsState extends State<ShopDetails> {
   List<Suggested> _images = [
     Suggested(
         brand: 'Subway. YSK',
@@ -30,6 +35,9 @@ class ShopDetails extends StatelessWidget {
         image:
             'https://i.pinimg.com/originals/0b/6a/53/0b6a5364c1831a2ceb273110c6a11c35.png'),
   ];
+
+  bool icons = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -198,6 +206,41 @@ class ShopDetails extends StatelessWidget {
                   ),
                 ),
               ),
+              Container(
+                padding: const EdgeInsets.only(
+                    left: 25, right: 25, top: 30, bottom: 10),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 12,
+                            bottom: 12,
+                          ),
+                          child: FittedBox(
+                            child: Text(
+                              'Suggested',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                            icon: Icon(icons == false
+                                ? Icons.expand_more
+                                : Icons.expand_less),
+                            onPressed: () {
+                              setState(() {
+                                icons = !icons;
+                              });
+                            })
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
