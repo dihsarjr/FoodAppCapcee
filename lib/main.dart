@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_app/food_screen.dart';
 import 'package:food_app/model/list_image.dart';
+import 'package:food_app/navigation.dart';
 import 'package:food_app/widget/offer_list_image.dart';
 import 'package:food_app/widget/row_category_item.dart';
 
@@ -24,13 +25,12 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage());
   }
 }
 
@@ -238,7 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Grocery(),
+                                      builder: (context) => Navigation(),
                                     ));
                               },
                               child: CategoryItem(

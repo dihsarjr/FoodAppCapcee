@@ -128,7 +128,7 @@ class FoodScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(child: NavigationBar()),
+      // bottomNavigationBar: SizedBox(child: NavigationBar()),
     );
   }
 }

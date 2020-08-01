@@ -119,10 +119,15 @@ class SuggestedItem extends StatelessWidget {
             ),
           ),
         ),
-        Icon(
-          Icons.add_circle,
-          size: 30,
-          color: Colors.amber,
+        GestureDetector(
+          onTap: () {
+            print('object');
+          },
+          child: Icon(
+            Icons.add_circle,
+            size: 35,
+            color: Colors.amber,
+          ),
         ),
       ],
     );
