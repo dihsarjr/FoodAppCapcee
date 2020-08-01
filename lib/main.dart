@@ -210,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => ShopDetails(),
+                                      builder: (context) => Medicine(),
                                     ));
                               },
                               child: CategoryItem(

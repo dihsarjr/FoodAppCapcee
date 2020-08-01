@@ -305,23 +305,124 @@ class _ShopDetailsState extends State<ShopDetails> {
                             })
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Container(
-                        color: Colors.white,
-                        child: ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return ShopItem(
-                              image: _shop[index].image,
-                              title: _shop[index].title,
-                            );
-                          },
-                          itemCount: _shop.length,
-                        ),
-                      ),
-                    )
+                    icons == false
+                        ? Container()
+                        : Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Container(
+                              color: Colors.white,
+                              child: ListView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 8,
+                                          bottom: 8,
+                                          left: 15,
+                                          right: 15),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.white.withOpacity(0.8),
+                                              offset: Offset(-6.0, -6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.1),
+                                              offset: Offset(6.0, 6.0),
+                                              blurRadius: 16.0,
+                                            ),
+                                          ],
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(15.0),
+                                        ),
+                                        child: Container(
+                                          height: 100,
+                                          child: Row(
+                                            children: <Widget>[
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 15,
+                                                    right: 25,
+                                                    top: 10,
+                                                    bottom: 10),
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.20,
+                                                  child: Image.network(
+                                                    _shop[index].image,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Container(
+                                                  padding: EdgeInsets.only(
+                                                      top: 6, bottom: 6),
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: <Widget>[
+                                                      FittedBox(
+                                                        child: Text(
+                                                          _shop[index].title,
+                                                          style: TextStyle(
+                                                              fontSize: 20),
+                                                        ),
+                                                      ),
+                                                      FittedBox(
+                                                        child: Text(
+                                                          'Flower ',
+                                                          style: TextStyle(
+                                                              color: Colors
+                                                                  .black54,
+                                                              fontSize: 13),
+                                                        ),
+                                                      ),
+                                                      Row(
+                                                        children: <Widget>[
+                                                          Icon(
+                                                            Icons.star_border,
+                                                            size: 15,
+                                                          ),
+                                                          Text('4.5')
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: IconButton(
+                                                    icon: Icon(
+                                                      Icons.add_circle,
+                                                      size: 35,
+                                                      color: Colors.amber,
+                                                    ),
+                                                    onPressed: () {}),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ));
+                                },
+                                itemCount: _shop.length,
+                              ),
+                            ),
+                          )
                   ],
                 ),
               )

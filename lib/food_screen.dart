@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'flowers.dart';
 import 'model/list_image.dart';
 import 'model/sugessted_model.dart';
+import 'shop_details.dart';
 import 'widget/list_images.dart';
 import 'widget/navigationBar.dart';
 import 'widget/shop_list.dart';
@@ -116,9 +118,18 @@ class FoodScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    return ShopItem(
-                      image: _shop[index].image,
-                      title: _shop[index].title,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ShopDetails(),
+                            ));
+                      },
+                      child: ShopItem(
+                        image: _shop[index].image,
+                        title: _shop[index].title,
+                      ),
                     );
                   },
                   itemCount: _shop.length,
