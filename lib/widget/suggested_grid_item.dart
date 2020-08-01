@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SuggestedItem extends StatelessWidget {
+class SuggestedItem extends StatefulWidget {
   String image;
   String price;
   String brand;
   String title;
+  bool cartBool;
 
-  SuggestedItem({this.brand, this.image, this.price, this.title});
+  SuggestedItem(
+      {this.brand,
+      this.image,
+      this.price,
+      this.title,
+      @required this.cartBool});
+
+  @override
+  _SuggestedItemState createState() => _SuggestedItemState();
+}
+
+class _SuggestedItemState extends State<SuggestedItem> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -27,7 +39,7 @@ class SuggestedItem extends StatelessWidget {
                   child: Center(
                     child: Container(
                       padding: EdgeInsets.all(8),
-                      child: Image.network(image),
+                      child: Image.network(widget.image),
                     ),
                   ),
                 ),
@@ -36,7 +48,7 @@ class SuggestedItem extends StatelessWidget {
                       left: 10, right: 10, bottom: 5, top: 5),
                   child: FittedBox(
                     child: Text(
-                      title,
+                      widget.title,
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
@@ -56,7 +68,7 @@ class SuggestedItem extends StatelessWidget {
                           ),
                           child: FittedBox(
                             child: Text(
-                              brand,
+                              widget.brand,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 10,
@@ -106,7 +118,7 @@ class SuggestedItem extends StatelessWidget {
                         padding: const EdgeInsets.only(right: 15, bottom: 10),
                         child: FittedBox(
                           child: Text(
-                            '\$$price',
+                            '\$${widget.price}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                           ),
@@ -122,6 +134,9 @@ class SuggestedItem extends StatelessWidget {
         GestureDetector(
           onTap: () {
             print('object');
+            setState(() {
+              widget.cartBool = true;
+            });
           },
           child: Icon(
             Icons.add_circle,

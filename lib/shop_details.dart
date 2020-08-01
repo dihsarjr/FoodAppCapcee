@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/main.dart';
 
 import 'model/sugessted_model.dart';
 import 'widget/shop_list.dart';
@@ -98,6 +99,7 @@ class _ShopDetailsState extends State<ShopDetails> {
         image:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Apollo_Tyres_logo.svg/640px-Apollo_Tyres_logo.svg.png'),
   ];
+  bool cartBoolss = false;
 
   bool icons = false;
 
@@ -257,6 +259,7 @@ class _ShopDetailsState extends State<ShopDetails> {
                                     image: _images[index].image,
                                     price: _images[index].price,
                                     title: _images[index].title,
+                                    cartBool: cartBoolss,
                                   );
                                 },
                                 itemCount: _images.length,

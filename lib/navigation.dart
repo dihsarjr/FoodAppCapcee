@@ -36,7 +36,7 @@ class _NavigationState extends State<Navigation> {
         onTap: _selectPages,
         backgroundColor: Colors.white,
         unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.cyan,
+        selectedItemColor: Colors.yellow,
         currentIndex: selectedPageIndex,
         items: [
           BottomNavigationBarItem(
