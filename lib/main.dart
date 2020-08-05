@@ -382,7 +382,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                           ),
                                                           FittedBox(
                                                             child: Text(
-                                                              '4.0',
+                                                              '4.5',
                                                               style: TextStyle(
                                                                   fontSize: 10,
                                                                   color: Colors
@@ -489,7 +489,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     onPressed: () {},
                                     child: FittedBox(
                                       child: Text(
-                                        'View More >',
+                                        'View More  >',
                                         style: TextStyle(color: Colors.black38),
                                       ),
                                     )),
